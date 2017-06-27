@@ -7,6 +7,20 @@ app = Flask(__name__)
 # Enable CSRF protection globally
 csrf = CSRFProtect(app)
 
+#define custom statics
+@app.route('/js/<path:filename>', endpoint='js')
+def static_scripts(filename):
+    return send_from_directory("static/scripts", filename)
+
+@app.route('/css/<path:filename>', endpoint='css')
+def static_styles(filename):
+    return send_from_directory("static/styles", filename)
+
+@app.route('/imgs/<path:filename>', endpoint='imgs')
+def static_scripts(filename):
+    return send_from_directory("static/images", filename)
+
+
 # App routes
 app.add_url_rule("/", "index", home.main)
 

@@ -1,0 +1,30 @@
+<form method="{{form_method}}" action="{{url_for(form_action)}}" id="{{ form.__class__.__name__ }}">
+    {{ form.hidden_tag() }}
+    {% for field in form if field.widget.input_type != 'hidden' %}
+        <div class="form-group has-feedback {{field.name}}
+                {% if field.errors %}
+                    has-error
+                {% elif field.data != None %}
+                    has-success
+                {% endif %}
+                ">
+            {% if field.type == "SubmitField" %}
+                {{field}}
+            {% else %}
+        		<label class="control-label" for="{{field.id}}">{{field.label}} :</label>
+                {{field(class_="form-control")}}
+        		<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+        		<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+        		<div class="form-group-message">
+                    {% if field.errors %}
+                        <ul>
+                        {% for message in field.errors %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+        		</div>
+            {% endif %}
+		</div>
+    {% endfor %}
+</form>

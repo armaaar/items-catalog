@@ -11,4 +11,4 @@ meta.seo_img = variables.seo_img
 
 
 
-__all__ = ["home", "login"]
+__all__ = ["home", "login", "logout"]

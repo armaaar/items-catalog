@@ -74,6 +74,8 @@ def login():
     #STEP 4 - Make session
     g.user = user
     session['user_id'] = user.id
+    session['gplus_id'] = gplus_id
+    session['access_token'] = credentials.access_token
 
     #STEP 5 - Send back token to the client
     return "ok"

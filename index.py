@@ -24,6 +24,7 @@ def static_scripts(filename):
 # App routes
 app.add_url_rule("/", "index", home.home)
 app.add_url_rule("/login/", "login", login.login, methods=["POST"])
+app.add_url_rule("/logout/", "logout", logout.logout)
 
 if __name__ == '__main__':
   app.secret_key = functions.create_salt()

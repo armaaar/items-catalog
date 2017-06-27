@@ -8,12 +8,6 @@ class User(Base):
     name = Column(String)
     email = Column(String, index=True)
 
-    def hash_password(self, password):
-        self.password = pwd_context.encrypt(password)
-
-    def verify_password(self, password):
-        return pwd_context.verify(password, self.password)
-
     def generate_auth_token(self, expiration=600):
     	s = Serializer(secret_key, expires_in = expiration)
     	return s.dumps({'id': self.id })

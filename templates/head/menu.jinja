@@ -14,25 +14,20 @@
         <nav class="col-md-9 col-xs-12" id="menu">
             <ul class="menu-list">
                 <li class="menu-item text-capitalize">
-                    <a href="/">Home</a>
+                    <a href="{{ url_for("index")}}">Home</a>
                 </li>
-                <!--
                 {% if universal.functions.is_loggedin() %}
                     <li class="menu-item text-capitalize">
-                        <a href="/newpost/">new post</a>
+                        <a href="javascript:void(0)">new item</a>
                     </li>
                     <li class="menu-item text-capitalize">
-                        <a href="/logout/">logout</a>
+                        <a href="javascript:void(0)">logout</a>
                     </li>
                 {% else: %}
                     <li class="menu-item text-capitalize">
-                        <a href="/login/">login</a>
-                    </li>
-                    <li class="menu-item text-capitalize">
-                        <a href="/register/">become a writer</a>
+                        <a href="javascript:void(0)">login</a>
                     </li>
                 {% endif %}
-                -->
             </ul>
         </nav>
     </div>

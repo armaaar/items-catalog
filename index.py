@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, redirect,jsonify, url_for, flash, send_from_directory
+from flask import Flask, send_from_directory, g
 from flask_wtf.csrf import CSRFProtect
 from universal import *
 from pages import *
 
 app = Flask(__name__)
 # Enable CSRF protection globally
-csrf = CSRFProtect(app)
+#csrf = CSRFProtect(app)
 
 #define custom statics
 @app.route('/js/<path:filename>', endpoint='js')
@@ -23,6 +23,7 @@ def static_scripts(filename):
 
 # App routes
 app.add_url_rule("/", "index", home.home)
+app.add_url_rule("/login/", "login", login.login, methods=["POST"])
 
 if __name__ == '__main__':
   app.secret_key = functions.create_salt()

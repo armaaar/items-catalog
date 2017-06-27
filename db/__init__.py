@@ -1,9 +1,11 @@
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from _base import Base
 
-from table import Sample
+from category import Category
+from user import User
+from item import Item
+
 
 engine = create_engine('sqlite:///test.db')
 Base.metadata.create_all(engine, checkfirst=True)
@@ -19,4 +21,4 @@ DBSession = sessionmaker(bind=engine)
 # session.rollback()
 db_session = DBSession()
 
-__all__ = ["db_session", "Sample"]
+__all__ = ["db_session", "Category", "User", "Item"]

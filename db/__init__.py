@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, desc
 from sqlalchemy.orm import sessionmaker
 from _base import Base
 
@@ -21,4 +21,4 @@ DBSession = sessionmaker(bind=engine)
 # session.rollback()
 db_session = DBSession()
 
-__all__ = ["db_session", "Category", "User", "Item"]
+__all__ = ["desc", "db_session", "Category", "User", "Item"]

@@ -28,7 +28,7 @@ def is_loggedin():
     try:
         # default implementation returns a string error
         return login_required_dummy_view() is None
-    except HTTPException:
+    except:
         # in case auth_error_callback raises a real error
         return False
 

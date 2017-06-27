@@ -22,7 +22,7 @@ def static_scripts(filename):
 
 
 # App routes
-app.add_url_rule("/", "index", home.main)
+app.add_url_rule("/", "index", home.home)
 
 if __name__ == '__main__':
   app.secret_key = functions.create_salt()

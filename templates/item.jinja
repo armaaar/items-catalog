@@ -1,0 +1,25 @@
+{% extends "./head/head.jinja" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="col-md-4 col-xs-12">
+        <h3>Other {{item.category.name}} Items</h3>
+        <ul class="side-bar">
+            {% for i in items %}
+                <li id="{{i.id}}">
+                    <a href="{{url_for("item", item_id=i.id)}}">{{i.name}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-8 col-xs-12">
+        <h3>
+            {{item.name}}
+        </h3>
+        <p>
+            {{item.description}}
+        </p>
+    </div>
+</div>
+{% endblock content %}

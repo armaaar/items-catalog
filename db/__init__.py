@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine, desc
+from sqlalchemy.sql.expression import and_, or_
 from sqlalchemy.orm import sessionmaker
 from _base import Base
 
@@ -21,4 +22,4 @@ DBSession = sessionmaker(bind=engine)
 # session.rollback()
 db_session = DBSession()
 
-__all__ = ["desc", "db_session", "Category", "User", "Item"]
+__all__ = ["desc", "db_session", "and_", "or_", "Category", "User", "Item"]

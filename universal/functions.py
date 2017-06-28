@@ -53,3 +53,13 @@ def user_own_item(item_id):
     if item is None:
         return False
     return True
+
+
+def item_owner(func):
+    def func_wrapper(*args, **kwargs):
+        item_id = kwargs['item_id']
+        if user_own_item(item_id) is not True:
+            flash("You are not authorized to edit that item.")
+            return redirect(url_for("item", item_id=item_id))
+        return func(*args, **kwargs)
+    return func_wrapper

@@ -36,6 +36,7 @@ app.add_url_rule("/additem/", "add_item", add_item.handler, methods=["GET", "POS
 app.add_url_rule("/categoty/<int:category_id>/", "category", category.handler)
 app.add_url_rule("/item/<int:item_id>/", "item", item.handler)
 app.add_url_rule("/edititem/<int:item_id>/", "edit_item", edit_item.handler, methods=["GET", "POST"])
+app.add_url_rule("/deleteitem/<int:item_id>/", "delete_item", delete_item.handler, methods=["GET", "POST"])
 
 if __name__ == '__main__':
   app.secret_key = functions.create_salt()

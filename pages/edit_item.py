@@ -11,7 +11,7 @@ def item_owner(func):
         return func(*args, **kwargs)
     return func_wrapper
 
-@item_owner
+@universal.functions.item_owner
 def handler(item_id):
     form = ItemForm()
     form.category_id.choices = [(c.id, c.name) for c in db_session.query(Category).order_by('name')]
@@ -21,7 +21,7 @@ def handler(item_id):
     elif request.method == "POST":
         return edit_item(form, item_id=item_id)
 
-@item_owner
+@universal.functions.item_owner
 def show_form(form, item_id):
     item = db_session.query(Item).filter_by(id=item_id).one()
 
@@ -32,7 +32,7 @@ def show_form(form, item_id):
     set_page_info(title="Edit '%s' Item" % (item.name,))
     return render_template("edit_item.jinja", form=form, item_id=item_id)
 
-@item_owner
+@universal.functions.item_owner
 def edit_item(form, item_id):
     if form.validate() != False:
         item_name = request.form["name"]

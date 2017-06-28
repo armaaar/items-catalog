@@ -30,13 +30,18 @@ def static_scripts(filename):
 
 # App routes
 app.add_url_rule("/", "index", home.home)
+# login / logout
 app.add_url_rule("/login/", "login", login.login, methods=["POST"])
 app.add_url_rule("/logout/", "logout", logout.logout)
-app.add_url_rule("/additem/", "add_item", add_item.handler, methods=["GET", "POST"])
+# categories
 app.add_url_rule("/categoty/<int:category_id>/", "category", category.handler)
+# items
 app.add_url_rule("/item/<int:item_id>/", "item", item.handler)
+app.add_url_rule("/additem/", "add_item", add_item.handler, methods=["GET", "POST"])
 app.add_url_rule("/edititem/<int:item_id>/", "edit_item", edit_item.handler, methods=["GET", "POST"])
 app.add_url_rule("/deleteitem/<int:item_id>/", "delete_item", delete_item.handler, methods=["GET", "POST"])
+# API
+app.add_url_rule("/api/v1/", "JSON", api.handler)
 
 if __name__ == '__main__':
   app.secret_key = functions.create_salt()

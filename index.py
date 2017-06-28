@@ -26,6 +26,7 @@ app.add_url_rule("/", "index", home.home)
 app.add_url_rule("/login/", "login", login.login, methods=["POST"])
 app.add_url_rule("/logout/", "logout", logout.logout)
 app.add_url_rule("/additem/", "add_item", add_item.handler, methods=["GET", "POST"])
+app.add_url_rule("/categoty/<int:category_id>/", "category", category.handler)
 
 if __name__ == '__main__':
   app.secret_key = functions.create_salt()

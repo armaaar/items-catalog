@@ -31,8 +31,8 @@ def set_page_info(title=None, body_class=None,
     else:
         meta.seo_img = seo_img
 
-def render_template(template, **args):
-    return r_t(template, universal=universal, meta=meta, **args)
+def render_template(template, **kwargs):
+    return r_t(template, universal=universal, meta=meta, **kwargs)
 
 __all__ = ["universal", "set_page_info", "render_template", "request", "redirect", "jsonify", "url_for", "flash",
     "session", "make_response", "g"]

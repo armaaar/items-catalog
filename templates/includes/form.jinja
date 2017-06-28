@@ -1,4 +1,4 @@
-<form method="{{form_method}}" action="{{url_for(form_action)}}" id="{{ form.__class__.__name__ }}">
+<form method="{{form_method}}" action="{{url_for(form_action, **kwargs)}}" id="{{ form.__class__.__name__ }}">
     {{ form.hidden_tag() }}
     {% for field in form if field.widget.input_type != 'hidden' %}
         <div class="form-group has-feedback {{field.name}}

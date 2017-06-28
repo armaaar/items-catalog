@@ -1,11 +1,18 @@
-from flask import Flask, send_from_directory, g
+from flask import Flask, send_from_directory, g, session
 from flask_wtf.csrf import CSRFProtect
 from universal import *
 from pages import *
+from datetime import timedelta
 
 app = Flask(__name__)
 # Enable CSRF protection globally
 #csrf = CSRFProtect(app)
+
+# Extend flask session time
+@app.before_request
+def make_session_permanent():
+    session.permanent = True
+    app.permanent_session_lifetime = timedelta(minutes=5)
 
 #define custom statics
 @app.route('/js/<path:filename>', endpoint='js')
@@ -28,6 +35,7 @@ app.add_url_rule("/logout/", "logout", logout.logout)
 app.add_url_rule("/additem/", "add_item", add_item.handler, methods=["GET", "POST"])
 app.add_url_rule("/categoty/<int:category_id>/", "category", category.handler)
 app.add_url_rule("/item/<int:item_id>/", "item", item.handler)
+app.add_url_rule("/edititem/<int:item_id>/", "edit_item", edit_item.handler, methods=["GET", "POST"])
 
 if __name__ == '__main__':
   app.secret_key = functions.create_salt()

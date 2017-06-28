@@ -23,8 +23,8 @@ def hash_it(password, salt=None, salt_it=True):
 def add_breaks(string):
     return str(string).replace('\n', '<br />')
 
-def render_form(form, form_action, form_method="POST"):
-    return render_template("includes/form.jinja", form=form, form_action=form_action, form_method=form_method)
+def render_form(form, form_action, form_method="POST", **kwargs):
+    return render_template("includes/form.jinja", form=form, form_action=form_action, form_method=form_method, kwargs=kwargs)
 
 def is_loggedin():
     user_id = session.get('user_id')
@@ -44,3 +44,12 @@ def require_login(func):
             return redirect(url_for("index"))
         return func(*args, **kwargs)
     return func_wrapper
+
+def user_own_item(item_id):
+    if not is_loggedin():
+        return False
+    user_id = session.get('user_id')
+    item = db_session.query(Item).filter_by(id=item_id, user_id=user_id).one()
+    if item is None:
+        return False
+    return True

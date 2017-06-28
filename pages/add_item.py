@@ -29,6 +29,6 @@ def add_item(form):
 
         db_session.add(item)
         db_session.commit()
-        return redirect(url_for("index"))
+        return redirect(url_for("item", item_id=item.id))
     else:
         return render_template("add_item.jinja", form=form)

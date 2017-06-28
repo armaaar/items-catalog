@@ -20,6 +20,9 @@
         <p>
             {{item.description}}
         </p>
+        {% if universal.functions.user_own_item(item.id) %}
+            <a href="{{url_for("edit_item", item_id=item.id)}}" class="btn btn-default">Edit</a>
+        {% endif %}
     </div>
 </div>
 {% endblock content %}

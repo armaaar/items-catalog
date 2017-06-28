@@ -9,7 +9,7 @@
                 {% endif %}
                 ">
             {% if field.type == "SubmitField" %}
-                {{field}}
+                {{field(class_="btn btn-default")}}
             {% else %}
         		<label class="control-label" for="{{field.id}}">{{field.label}} :</label>
                 {{field(class_="form-control")}}

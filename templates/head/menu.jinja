@@ -1,7 +1,7 @@
 <header class="container" id="header">
     <div class="row">
         <div class="col-md-3 col-xs-12" id="logo-container">
-            <a href="/">
+            <a href="{{url_for("index")}}">
                 <picture>
                     <source srcset="./imgs/crow_logo_black-sm.png" media="(min-width: 992px)">
                     <source srcset="./imgs/crow_logo_black-xs.png" media="(max-width: 991px)">
@@ -18,7 +18,7 @@
                 </li>
                 {% if universal.functions.is_loggedin() %}
                     <li class="menu-item text-capitalize">
-                        <a href="javascript:void(0)">new item</a>
+                        <a href="{{url_for("add_item")}}">new item</a>
                     </li>
                     <li class="menu-item text-capitalize">
                         <a href="{{ url_for("logout")}}">logout</a>

@@ -5,7 +5,7 @@ import hmac
 import string
 import random
 # Forms rendering
-from flask import render_template, session, make_response, g
+from flask import render_template, session, make_response, g, redirect, url_for, flash
 from db import *
 import json
 
@@ -40,8 +40,7 @@ def is_loggedin():
 def require_login(func):
     def func_wrapper(*args, **kwargs):
         if not is_loggedin():
-            response = make_response(json.dumps("You need to be loggedin to access this page."), 401)
-            response.headers['Content-Type'] = 'application/json'
-            return response
+            flash("You need to be loggedin to access that page.")
+            return redirect(url_for("index"))
         return func(*args, **kwargs)
     return func_wrapper

@@ -1,55 +1,67 @@
-/*
-Error: File to import not found or unreadable: articles.
-        on line 36 of static/styles/src_sass/style.scss
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+body {
+  font-family: "Raleway", sans-serif;
+  color: #444;
+  font-size: 18px;
+  background-color: #eee; }
 
-31:     margin-bottom: 5px;
-32: }
-33: 
-34: @import "forms";
-35: @import "menu";
-36: @import "articles";
+img {
+  max-width: 100%; }
 
-Backtrace:
-static/styles/src_sass/style.scss:36
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:67:in `rescue in import'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:45:in `import'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:28:in `imported_file'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/import_node.rb:37:in `css_import?'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:313:in `visit_import'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:159:in `visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/tree/root_node.rb:20:in `render'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:281:in `render'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin.rb:82:in `update_stylesheets'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:51:in `process_result'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/bin/sass:13:in `<top (required)>'
-C:/Ruby23-x64/bin/sass:22:in `load'
-C:/Ruby23-x64/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: articles.\A         on line 36 of static/styles/src_sass/style.scss\A \A 31:     margin-bottom: 5px;\A 32: }\A 33: \A 34: @import \"forms\";\A 35: @import \"menu\";\A 36: @import \"articles\";"; }
+a {
+  color: #89F; }
+
+.cta-container {
+  margin-top: 10px;
+  margin-bottom: 5px; }
+
+.form-group.has-feedback .form-control-feedback {
+  top: 30px;
+  display: none; }
+
+.form-group.has-feedback.has-success .form-control-feedback.glyphicon.glyphicon-ok {
+  display: block; }
+
+.form-group.has-feedback.has-error .form-control-feedback.glyphicon.glyphicon-remove {
+  display: block; }
+
+.form-group-message,
+.form-message {
+  color: #a94442; }
+
+#header {
+  min-height: 75px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd; }
+  #header #logo-container,
+  #header #menu {
+    text-align: center;
+    padding-top: 10px; }
+  @media (min-width: 992px) {
+    #header #menu {
+      min-height: 75px;
+      text-align: right; } }
+  #header #menu ul.menu-list {
+    list-style: none;
+    padding: 0; }
+    @media (min-width: 992px) {
+      #header #menu ul.menu-list {
+        -webkit-transform: translateY(27%);
+                transform: translateY(27%); } }
+    #header #menu ul.menu-list li.menu-item {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 0 5px; }
+      #header #menu ul.menu-list li.menu-item a {
+        color: #444;
+        text-decoration: none; }
+      #header #menu ul.menu-list li.menu-item a:hover {
+        color: #000; }
+  @media (min-width: 992px) {
+    #header #logo-container {
+      text-align: left; } }
+  #header #logo-container img {
+    max-width: 100%; }
+    @media (min-width: 992px) {
+      #header #logo-container img {
+        max-height: 63px; } }

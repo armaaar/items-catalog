@@ -1,36 +1,30 @@
 $break-medium: 992px;
 $break-small: 768px;
-
 $font-family: 'Raleway', sans-serif;
 $font-color: #444;
 $active-color: #000;
 $inactive-color: #ddd;
 $special-color: #89F;
+@import url( 'https://fonts.googleapis.com/css?family=Raleway');
 
-@import url('https://fonts.googleapis.com/css?family=Raleway');
-
-body
-{
+body {
     font-family: $font-family;
     color: $font-color;
     font-size: 18px;
     background-color: #eee;
-
 }
-img
-{
+
+img {
     max-width: 100%;
 }
-a
-{
+
+a {
     color: $special-color;
 }
-.cta-container
-{
+
+.cta-container {
     margin-top: 10px;
     margin-bottom: 5px;
 }
-
 @import "forms";
 @import "menu";
-@import "articles";

@@ -3,6 +3,7 @@ from sqlalchemy.orm import relationship
 from _base import Base
 from db import User, Category
 
+
 class Item(Base):
     __tablename__ = 'item'
     id = Column(Integer, primary_key=True)
@@ -17,9 +18,9 @@ class Item(Base):
 
     @property
     def serialize(self):
-       """Return object data in easily serializeable format"""
-       return {
-            'id'           : self.id,
-            'name'         : self.name,
-            'description'  : self.description,
-       }
+        """Return object data in easily serializeable format"""
+        return {
+            'id': self.id,
+            'name': self.name,
+            'description': self.description,
+        }

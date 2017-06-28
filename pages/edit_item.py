@@ -2,6 +2,7 @@ from _imports import *
 from db import *
 from forms import ItemForm
 
+
 def item_owner(func):
     def func_wrapper(*args, **kwargs):
         item_id = kwargs['item_id']
@@ -11,15 +12,18 @@ def item_owner(func):
         return func(*args, **kwargs)
     return func_wrapper
 
+
 @universal.functions.item_owner
 def handler(item_id):
     form = ItemForm()
-    form.category_id.choices = [(c.id, c.name) for c in db_session.query(Category).order_by('name')]
+    form.category_id.choices = [(c.id, c.name)
+                                for c in db_session.query(Category).order_by('name')]
 
     if request.method == "GET":
         return show_form(form, item_id=item_id)
     elif request.method == "POST":
         return edit_item(form, item_id=item_id)
+
 
 @universal.functions.item_owner
 def show_form(form, item_id):
@@ -31,6 +35,7 @@ def show_form(form, item_id):
 
     set_page_info(title="Edit '%s' Item" % (item.name,))
     return render_template("edit_item.jinja", form=form, item_id=item_id)
+
 
 @universal.functions.item_owner
 def edit_item(form, item_id):
